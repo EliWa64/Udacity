@@ -8,11 +8,17 @@
 #define SYS_CONTROL_BASE_ADDRESS            0x400FE000
 #define CORE_PERI_BASE_ADDRESS              0xE000E000
 
+#define RCGC_BASE_ADDRESS								SYS_CONTROL_BASE_ADDRESS + 0x600 //Run Mode Clock Gating Control
 #define Enable_BASE_ADDRESS             CORE_PERI_BASE_ADDRESS + 0x100
 #define PRI_BASE_ADDRESS                CORE_PERI_BASE_ADDRESS + 0x400
 
 
+
 #define RCC                             ((volatile RCC_Tag*)(SYS_CONTROL_BASE_ADDRESS + 0x060))
+	
+
+#define RESC														(*((volatile uint32_t*)(SYS_CONTROL_BASE_ADDRESS + 0x05C)))
+#define PLLSTAT                         (*((volatile uint32_t*)(SYS_CONTROL_BASE_ADDRESS + 0x168)))
 
 #define APINT                           (*((volatile uint32_t*)(CORE_PERI_BASE_ADDRESS + 0xD0C)))
 #define SYSPRI1                         (*((volatile uint32_t*)(CORE_PERI_BASE_ADDRESS + 0xD18)))

@@ -1,9 +1,6 @@
 #ifndef STD_TYPES_H
 #define STD_TYPES_H
 
-#define E_OK                0u
-#define E_NOT_OK            1u
-
 #ifndef TRUE
    #define TRUE             1u
 #endif
@@ -15,6 +12,16 @@
 #define ENABLE              1u
 #define DISABLE             0u
 
+#define LOGIC_HIGH              	1u
+#define LOGIC_LOW             		0u
+
+
+
+typedef enum
+{
+	OK,
+	NOK
+}Std_ErrorState_et;
 
 
 

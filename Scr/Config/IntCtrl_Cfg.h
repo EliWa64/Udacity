@@ -31,7 +31,7 @@
 
 
 
-#define NUMBER_OF_USED_INTERRUPTS                   1
+#define NUMBER_OF_USED_INTERRUPTS                   2
 
 
 

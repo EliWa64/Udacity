@@ -20,7 +20,39 @@
  *  GLOBAL CONSTANT MACROS
  *********************************************************************************************************************/
 
-#define MCU_CLOCK_SETTING_CONFIGS_NUMBER			1
+#define MCU_CLOCK_SETTING_CONFIG_PROFILES_NUMBER			1
+#define MCU_CLOCK_GATES_NUMBER												1
+
+
+
+/* Crystal Values (XTAL) Options:
+ *
+ *	Not using the PLL:                                  Using the PLL:          Value:
+ *	------------------			                        --------------          ------
+ *
+ *	4 MHz						                        reserved				0x06
+ * 	4.096 MHz					                        reserved				0x07
+ *	4.9152 MHz					                        reserved				0x08
+ *								5 MHz (USB)				                        0x09
+ *								5.12 MHz				                        0x0A
+ *								6 MHz (USB)				                        0x0B
+ *								6.144 MHz				                        0x0C
+ *								7.3728 MHz				                        0x0D
+ *								8 MHz (USB)										0x0E
+ *								8.192 MHz										0x0F
+ *								10.0 MHz (USB)									0x10
+ *								12.0 MHz (USB)								    0x11
+ *								12.288 MHz									    0x12
+ *								13.56 MHz									    0x13
+ *								14.31818 MHz								    0x14
+ *								16.0 MHz (USB)								    0x15
+ *								16.384 MHz									    0x16
+ *								18.0 MHz (USB)								    0x17
+ *								20.0 MHz (USB)								    0x18
+ *								24.0 MHz (USB)								    0x19
+ *								25.0 MHz (USB)								    0x1A
+ */
+ #define MCU_XTAL_VALUE_SEL				0x15
 
 /**********************************************************************************************************************
  *  GLOBAL FUNCTION MACROS

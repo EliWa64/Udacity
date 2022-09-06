@@ -117,7 +117,7 @@ const Mcu_Config_st McuConfig[MCU_CLOCK_SETTING_CONFIG_PROFILES_NUMBER] =
 
 Mcu_ClockGate_et WantedClockGate[MCU_CLOCK_GATES_NUMBER] =
 {
-	MCU_CLOCK_GATE_GPIO_A,
+	MCU_CLOCK_GATE_GPIO_F,
 };
 
 

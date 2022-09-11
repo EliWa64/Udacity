@@ -104,8 +104,10 @@
 const IntCtrl_Interrupt_st interrupts[NUMBER_OF_USED_INTERRUPTS] =
 {
   /*Interrupt             Group Priority           Subgroup Priority              Is Enabled*/
-	{GPIO_PORT_A,                      0,                       1,                      TRUE},
-  {UART0,                      			 2,                       1,                      FALSE},
+	{WDT_0_AND_1,                      0,                       0,                      TRUE},
+	{GPIO_PORT_A,                      0,                       0,                      TRUE},
+	{_32_64_BIT_TIMER_0A,                  0,                       0,                      TRUE},
+	{_32_64_BIT_TIMER_4A,              0,                       0,                      TRUE},
 };
 
 

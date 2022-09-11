@@ -258,9 +258,8 @@ const Port_Config_st PortConfig[MAX_NUMBER_OF_CONFIGS] =
     /*pinId,        PinMode                 pinDir,         pinLevel,       pinInternalAttach,                  pinOutputCurrent,               pinExtInt*/
     /*-----         -------                 ------          ---------       ------------------                  ----------------                ---------*/
 
-    {PORT_PIN_F1,   PORT_PIN_MODE_X_DIO,    PORT_PIN_OUT,   PORT_PIN_HIGH,  PORT_ATTACH_INTERNAL_PULL_DOWN,     PORT_CURRENT_2_MILLIAMPERE,     PORT_EXT_INT_RISING_EDGE},
-    {PORT_PIN_F2,   PORT_PIN_MODE_X_DIO,    PORT_PIN_IN,    PORT_PIN_HIGH,  PORT_ATTACH_INTERNAL_PULL_UP,       PORT_CURRENT_2_MILLIAMPERE,     PORT_EXT_INT_DISABLE},
-    {PORT_PIN_F3,   PORT_PIN_MODE_X_DIO,    PORT_PIN_OUT,   PORT_PIN_LOW,   PORT_ATTACH_INTERNAL_PULL_UP,       PORT_CURRENT_2_MILLIAMPERE,     PORT_EXT_INT_DISABLE},
+    {PORT_PIN_F1,   PORT_PIN_MODE_X_DIO,    PORT_PIN_OUT,   PORT_PIN_LOW,  PORT_ATTACH_DEFAULT,     PORT_CURRENT_2_MILLIAMPERE,     PORT_EXT_INT_DISABLE},
+    {PORT_PIN_F3,   PORT_PIN_MODE_X_DIO,    PORT_PIN_OUT,   PORT_PIN_LOW,  	PORT_ATTACH_DEFAULT,     PORT_CURRENT_2_MILLIAMPERE,     PORT_EXT_INT_DISABLE}
 };
 /**********************************************************************************************************************
  *  LOCAL DATA 

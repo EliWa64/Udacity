@@ -20,8 +20,11 @@
  *  GLOBAL CONSTANT MACROS
  *********************************************************************************************************************/
 
+#define F_MAINOSC	16000000UL
+
+
 #define MCU_CLOCK_SETTING_CONFIG_PROFILES_NUMBER			1
-#define MCU_CLOCK_GATES_NUMBER												1
+#define MCU_CLOCK_GATES_NUMBER								3
 
 
 

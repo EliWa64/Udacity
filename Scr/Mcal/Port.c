@@ -72,7 +72,6 @@ void Port_Init(const Port_Config_st* p_config)
         loc_bitNumber = loc_pinId % MAX_NUMBER_OF_CHANNELS_IN_PORT;
         loc_baseAddr = GpioApbBaseAddress[loc_regNumber];
 
-
         if(loc_pinDir == PORT_PIN_IN)
         {
             GPIOPDIR(loc_baseAddr) &= ~(1 << loc_bitNumber);
@@ -86,7 +85,7 @@ void Port_Init(const Port_Config_st* p_config)
         GPIOLOCK(loc_baseAddr) = GPIO_LOCK_KEY;
 
         /*Commit the values in GPIOAFSEL, GPIOPUR, GPIOPDR, and GPIODEN by writing 0x1 to the corresponding bits.*/
-        GPIOCR(loc_baseAddr) |= 1 << loc_bitNumber;
+        GPIOCR(loc_baseAddr) |= 1 << loc_bitNumber; //Hint: This Reg for pins that have NMI, otherwise it is always enabled
         
 
         if((loc_pinMode != PORT_PIN_MODE_X_ANALOG) && (loc_pinMode != PORT_PIN_MODE_X_DIO))
@@ -140,11 +139,6 @@ void Port_Init(const Port_Config_st* p_config)
         {
             GPIODEN(loc_baseAddr) |= 1 << loc_bitNumber;
         } //else
-
-        //GPIOCR(loc_baseAddr) &= ~(1 << loc_bitNumber);
-
-        /*Lock the GPIOCR by writing any value to GPIOLOCK reg.*/
-        GPIOLOCK(loc_baseAddr) = 0;
 
         if(loc_pinLevel == PORT_PIN_LOW)
         {

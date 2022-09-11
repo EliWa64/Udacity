@@ -4,7 +4,7 @@
  *********************************************************************************************************************/
 
 #include "Std_Types.h"
-#include "Mcu_Types.h"
+#include "Mcu.h"
 #include "Mcu_Cfg.h"
 
 /**********************************************************************************************************************
@@ -54,8 +54,8 @@
 
 const Mcu_Config_st McuConfig[MCU_CLOCK_SETTING_CONFIG_PROFILES_NUMBER] =
 {
-	/*clockSource									pllOption													isRunModeCGC				sysDivisor*/
-	{MCU_PRECISION_INTERNAL_OSC	, MCU_NO_PLL											, TRUE							, 1},
+	/*clockSource						pllOption				isRunModeCGC	sysDivisor*/
+	{MCU_PRECISION_INTERNAL_OSC	,		MCU_NO_PLL, 			TRUE,			 1}
 };
 
 
@@ -118,6 +118,8 @@ const Mcu_Config_st McuConfig[MCU_CLOCK_SETTING_CONFIG_PROFILES_NUMBER] =
 Mcu_ClockGate_et WantedClockGate[MCU_CLOCK_GATES_NUMBER] =
 {
 	MCU_CLOCK_GATE_GPIO_F,
+	MCU_CLOCK_GATE_32_64_GPT_0,
+	MCU_CLOCK_GATE_32_64_GPT_4
 };
 
 

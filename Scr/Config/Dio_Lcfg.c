@@ -39,18 +39,6 @@
  *********************************************************************************************************************/
 
 
-/******************************************************************************
-* \Syntax          : Std_ReturnType FunctionName(AnyType parameterName)        
-* \Description     : Describe this service                                    
-*                                                                             
-* \Sync\Async      : Synchronous                                               
-* \Reentrancy      : Non Reentrant                                             
-* \Parameters (in) : parameterName   Parameter Describtion                     
-* \Parameters (out): None                                                      
-* \Return value:   : Std_ReturnType  E_OK
-*                                    E_NOT_OK                                  
-*******************************************************************************/
-
 
 /**********************************************************************************************************************
  *  END OF FILE: Dio_Lcfg.c

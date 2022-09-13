@@ -11,8 +11,8 @@ extern const Gpt_Config_st Gpt_Config[];
 void App_SetLedConfig(uint8_t onTime, uint8_t offTime);
 void App_WTimer0_IsrHandler(void);
 
-uint32_t g_led_onTicksNumber;
-uint32_t g_led_offTicksNumber;
+uint32_t g_led_onTime;
+uint32_t g_led_offTime;
 	
 int main(void)
 {
@@ -33,8 +33,8 @@ int main(void)
 
 void App_SetLedConfig(uint8_t onTime, uint8_t offTime)
 {
-	g_led_onTicksNumber = onTime;
-	g_led_offTicksNumber = offTime;
+	g_led_onTime = onTime;
+	g_led_offTime = offTime;
 } /*App_SetLedConfig*/
 
 
@@ -42,17 +42,17 @@ void App_WTimer0_IsrHandler(void)
 {
 	static i = 0;
 	static count = 0;
-	if((i == 0) && ((count/500) < g_led_offTicksNumber))
+	if((i == 0) && ((count/500) < g_led_offTime))
 	{
 		Dio_WriteChannel(CHANNEL_F3, ~Dio_ReadChannel(CHANNEL_F3));
 	}
-	else if((i == 0) && ((count/500) == g_led_offTicksNumber))
+	else if((i == 0) && ((count/500) == g_led_offTime))
 	{
 		Dio_WriteChannel(CHANNEL_F3, HIGH);
 		count = 0;
 		i++;
 	}
-	else if((i == 1) && ((count/500) == g_led_onTicksNumber))
+	else if((i == 1) && ((count/500) == g_led_onTime))
 	{
 		Dio_WriteChannel(CHANNEL_F3, LOW);
 		count = 0;
